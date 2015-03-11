@@ -1,1 +1,1 @@
-
+gem 'github-pages'
