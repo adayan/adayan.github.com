@@ -49,7 +49,9 @@ var MAIN = (function($) {
       cacheElements();
 
       initFullpage();
-      initFirstSection();  // init first section
+      setTimeout(function() {
+        initFirstSection();  // init first section
+      }, 2000);
     }
   };
 }(jQuery));
