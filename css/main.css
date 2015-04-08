@@ -58,6 +58,12 @@ ul {
   font-size: 16px;
 }
 
+.avatar {
+  background: url(../imgs/me.png) no-repeat;
+  width: 136px;
+  height: 115px;
+}
+
 #menu {
   padding: 0;
 }

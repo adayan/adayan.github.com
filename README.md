@@ -1,3 +1,3 @@
 adayan.github.com
 =================
-Ada's blog
+Ada's site
