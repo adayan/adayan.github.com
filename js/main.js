@@ -18,7 +18,7 @@ var MAIN = (function($) {
   }
 
   function isFirstSection() {
-    return location.hash.substr(1) === anchors[0];
+    return (location.hash.substr(1) === anchors[0]) || (location.hash === '');
   }
 
   function initFullpage() {
