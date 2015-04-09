@@ -18,6 +18,10 @@ ul {
   list-style: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .pull-right {
   float: right;
 }
@@ -90,9 +94,17 @@ ul {
   display: inline-block;
   border: 5px solid #fff;
   border-radius: 75px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   height: 140px;
   width: 140px;
   margin: 0 30px;
+
+}
+
+.js-num {
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .about-experience {
