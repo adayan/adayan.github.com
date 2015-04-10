@@ -64,6 +64,9 @@ ul {
 
 .avatar {
   background: url(../imgs/me.png) no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 136px;
   height: 115px;
 }

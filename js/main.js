@@ -9,11 +9,17 @@ var MAIN = (function($) {
   function cacheElements() {
     el = {
       $sections: $view.find('.section'),
+      $avatar: $('.avatar'),
       $aboutNum: $view.find('.js-num'),
       $canvas: document.getElementById('canvas')
     };
   }
 
+  function bindActions() {
+    el.$avatar.hover(function() {
+      $(this).toggleClass('infinite');
+    });
+  }
 
   /** tools **/
   function hasAnimated(index) {
@@ -176,7 +182,9 @@ var MAIN = (function($) {
     init: function() {
       $view = $('.section-wrap');
       cacheElements();
+      bindActions();
       initFullpage();
+
       if (isFirstSection()) {
         doAnimation(1);
       }
