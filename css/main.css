@@ -125,6 +125,22 @@ ul {
   -o-animation-delay: 1.3s;
 }
 
+/* skill */
+.canvas-wrap {
+  position: relative;
+}
+
+.javascript,
+.css,
+.html,
+.php {
+  display: inline-block;
+  font-size: 38px;
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+}
+
 
 /** clearfix **/
 .clearfix:before,

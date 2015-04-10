@@ -2,7 +2,8 @@ var MAIN = (function($) {
   'use strict';
 
   var $view, el, aboutSetting,
-        anchors = ['about', 'skill', 'page1'];
+      anchors = ['about', 'skill', 'page1'],
+      $window = $(window);
 
 
   function cacheElements() {
@@ -13,12 +14,18 @@ var MAIN = (function($) {
     };
   }
 
+
+  /** tools **/
   function hasAnimated(index) {
     return el.$sections.eq(index).hasClass('js-animated');
   }
 
   function isFirstSection() {
     return (location.hash.substr(1) === anchors[0]) || (location.hash === '');
+  }
+
+  function isMobile() {
+    return ($window.width <= 768);
   }
 
   function initFullpage() {
@@ -37,11 +44,11 @@ var MAIN = (function($) {
 
   function doAnimation(index) {
     switch(index) {
-      case 1:
+      case 1:  // about section
         initAbout();
         break;
 
-      case 2:
+      case 2:  // skill section
         initSkill();
         break;
 
@@ -59,71 +66,111 @@ var MAIN = (function($) {
   /** About Section **/
   function initAbout() {
     setTimeout(function() {
-        initAboutAnimation();  // init first section
-      }, 2000);
+      initAboutAnimation();
+    }, 2000);
   }
 
   function initAboutAnimation() {
-    var speed = 500,
-        count = el.$aboutNum.length,
-        numbers = [2, 9, 100];
+    var numbers = [2, 9, 100],
+        $numbers = el.$aboutNum,
+        $number;
 
     for (var i = 0; i < numbers.length; i++) {
-      (function(i) {
-        var number = 0;
-
-        var handle = setInterval(function() {
-          el.$aboutNum.eq(i).text(number++);
-
-          if (number > numbers[i]) {
-            clearInterval(handle);
-          }
-
-        }, speed / numbers[i]);
-
-      }(i));
+      $number = $numbers.eq(i);
+      countNumber($number, numbers[i]);
     }
+  }
+
+  function countNumber($ele, currentNum, isPercentage) {
+    var speed = 500;
+
+    (function(currentNum) {
+      var number = 0;
+
+      var handle = setInterval(function() {
+        $ele.text(isPercentage ? (number++) + '%' : number++);
+
+        if (number > currentNum) {
+          clearInterval(handle);
+        }
+
+      }, speed / currentNum);
+    }(currentNum));
   }
 
   /** Skill Section **/
   function initSkill() {
-    var skills = {
-
+    var options = {
+      skills: {
+        'javascript': 70,
+        'html': 75,
+        'css': 65,
+        'php': 50
+      },
+      radius: isMobile() ? 50 : 100,
+      margin: 100,
+      startAngle: 3*Math.PI/2
     };
-    drawProcessCirle();
+
+    var canvas = el.$canvas;
+    canvas.setAttribute('width', $window.width());
+    var ctx =  canvas.getContext('2d');
+
+    var index = 0;
+    for (var skill in options.skills) {
+      drawProcessCirle(ctx, skill, index, options);
+      index++;
+    }
   }
 
-  function drawProcessCirle() {
-    var canvas = el.$canvas;
-    var ctx =  canvas.getContext('2d');
+  function drawProcessCirle(ctx, skill, index, options) {
+    var cirleX = (2 * index + 1) * options.radius + (index + 1) * options.margin,
+        cirleY = options.radius + options.margin / 2;
 
     // outter cirle
     ctx.beginPath();
-    ctx.arc(150, 150, 100, 0, Math.PI*2, true);
-    ctx.lineWidth=25;
-    ctx.strokeStyle="lightblue";
+    ctx.arc(cirleX, cirleY, options.radius, 0, Math.PI*2, true);
+    ctx.lineWidth = 25;
+    ctx.strokeStyle = 'lightblue';
     ctx.stroke();
-    ctx.closePath();
 
-    // angle
+    // process cirle
     var count = 0;
-    var startAngle = 3*Math.PI/2;
     var handle = setInterval(function() {
-        if (count == 10) {
-            clearInterval(handle);
-        }
+      if (count == 10) {
+        clearInterval(handle);
+      }
 
-        // angle
-        ctx.beginPath();
-        ctx.arc(150, 150, 100, startAngle, startAngle + (2*Math.PI*count/(2*10)), false);
-        ctx.strokeStyle="darkblue";
-        ctx.stroke();
-        //ctx.closePath();
+      // angle
+      ctx.beginPath();
+      var anglePerSec = 2 * Math.PI * count / (100 / (options.skills[skill]) * 10);
+      ctx.arc(cirleX, cirleY, options.radius, options.startAngle, options.startAngle + anglePerSec, false);
+      ctx.strokeStyle = 'darkblue';
+      ctx.stroke();
+      ctx.closePath();
 
-        count++;
+      count++;
     }, 60);
 
+    // draw text
+    ctx.font = 'bold 18px Helvetica';
+    ctx.textAlign = 'center';
+    ctx.fillText(skill.toUpperCase(), cirleX, 2*cirleY);
+    ctx.closePath();
+
+    setNumber(cirleX, cirleY, skill, options.skills);
   }
+
+  function setNumber(cirleX, cirleY, skill, skills) {
+    var $skill = $view.find('.' + skill);
+    $skill.css({
+      top: cirleY - 25,
+      left: cirleX - 35
+    });
+
+    countNumber($skill, skills[skill], true);
+  }
+
 
   return {
     init: function() {
