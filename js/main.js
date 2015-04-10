@@ -11,8 +11,7 @@ var MAIN = (function($) {
       $sections: $view.find('.section'),
       $avatar: $('.avatar'),
       $aboutNum: $view.find('.js-num'),
-      $canvas: document.getElementById('canvas'),
-      $photoFrame: $view.find('.photo-frame')
+      $canvas: document.getElementById('canvas')
     };
   }
 
@@ -187,7 +186,6 @@ var MAIN = (function($) {
 
   /** interest section */
   function initInterest() {
-    // el.$photoFrame.fadeIn(500);
   }
 
 

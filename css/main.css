@@ -89,7 +89,7 @@ ul {
 }
 
 /* about */
-.about-content { /* TODO add different vendors */
+.about-content {
   -webkit-animation-delay: .5s;
   -moz-animation-delay: .5s;
   -o-animation-delay: .5s;
@@ -155,30 +155,33 @@ ul {
 }
 
 .photo-frame {
-  display: none;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2);
   position: absolute;
-  min-height: 300px;
+  min-height: 200px;
   width: 300px;
   transition: all 1s ease;
 }
 
-.photo-1 {
-  -ms-transform:rotate(37deg);
-  -moz-transform:rotate(37deg);
-  -webkit-transform:rotate(37deg);
-  -o-transform:rotate(37deg);
-  transform:rotate(37deg);
+.frame-1 {
+  left: 0;
+  top: 100px;
 }
 
-.photo-2 {
-  /*-ms-transform:rotate(-7deg);
-  -moz-transform:rotate(-7deg);
-  -webkit-transform:rotate(-7deg);
-  -o-transform:rotate(-7deg);
-  transform:rotate(-7deg);*/
+.frame-2 {
+  left: 150px;
+  top: 200px;
+}
+
+.frame-3 {
+  left: 350px;
+  top: 50px;
+}
+
+.photo-1,
+.photo-2,
+.photo-3 {
   transition: all 1s ease;
 }
 
@@ -190,7 +193,9 @@ ul {
   transform: rotateY(-180deg);
 }
 
-.photo-frame:hover .photo-2 {
+.frame-1:hover .photo-1,
+.frame-2:hover .photo-2,
+.frame-3:hover .photo-3 {
   opacity: 0;
 }
 
@@ -203,8 +208,34 @@ ul {
   transition: all 1s ease;
 }
 
-.photo-frame:hover .photo-back {
+.frame-1:hover .photo-back,
+.frame-2:hover .photo-back,
+.frame-3:hover .photo-back {
   opacity: 1;
+}
+
+.photo-brief {
+  position: absolute;
+  left: 700px;
+  top: 200px;
+}
+
+.brief-1 {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+}
+
+.brief-2 {
+  -webkit-animation-delay: 2.0s;
+  -moz-animation-delay: 2.0s;
+  -o-animation-delay: 2.0s;
+}
+
+.brief-3 {
+  -webkit-animation-delay: 3.5s;
+  -moz-animation-delay: 3.5s;
+  -o-animation-delay: 3.5s;
 }
 
 
