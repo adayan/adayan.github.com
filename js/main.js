@@ -2,7 +2,7 @@ var MAIN = (function($) {
   'use strict';
 
   var $view, el, aboutSetting,
-      anchors = ['about', 'skill', 'page1'],
+      anchors = ['about', 'skill', 'project', 'interest'],
       $window = $(window);
 
 
@@ -11,7 +11,8 @@ var MAIN = (function($) {
       $sections: $view.find('.section'),
       $avatar: $('.avatar'),
       $aboutNum: $view.find('.js-num'),
-      $canvas: document.getElementById('canvas')
+      $canvas: document.getElementById('canvas'),
+      $photoFrame: $view.find('.photo-frame')
     };
   }
 
@@ -40,6 +41,9 @@ var MAIN = (function($) {
       anchors: anchors,
       menu: '#menu',
       paddingTop: 50,
+      onLeave: function(index, nextIndex) {
+        (nextIndex === 1) ? el.$avatar.removeClass('hidden') : el.$avatar.addClass('hidden');
+      },
       afterLoad: function(anchorLink , index) {
         if (!hasAnimated(index - 1)) {
          doAnimation(index);
@@ -59,6 +63,10 @@ var MAIN = (function($) {
         break;
 
       case 3:
+        break;
+
+      case 4:
+        initInterest();
         break;
 
       default:
@@ -175,6 +183,11 @@ var MAIN = (function($) {
     });
 
     countNumber($skill, skills[skill], true);
+  }
+
+  /** interest section */
+  function initInterest() {
+    // el.$photoFrame.fadeIn(500);
   }
 
 

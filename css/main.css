@@ -51,6 +51,9 @@ ul {
 
 /* header */
 .header {
+  background: rgb(0, 51, 102);
+  box-shadow: 0 1px 10px darkblue;
+  opacity: 0.8;
   position: fixed;
   top: 0;
   left: 0;
@@ -142,6 +145,66 @@ ul {
   color: #fff;
   font-weight: bold;
   position: absolute;
+}
+
+/* interest */
+.photo-wrap {
+  margin: 0 auto;
+  position: relative;
+  width: 80%;
+}
+
+.photo-frame {
+  display: none;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  min-height: 300px;
+  width: 300px;
+  transition: all 1s ease;
+}
+
+.photo-1 {
+  -ms-transform:rotate(37deg);
+  -moz-transform:rotate(37deg);
+  -webkit-transform:rotate(37deg);
+  -o-transform:rotate(37deg);
+  transform:rotate(37deg);
+}
+
+.photo-2 {
+  /*-ms-transform:rotate(-7deg);
+  -moz-transform:rotate(-7deg);
+  -webkit-transform:rotate(-7deg);
+  -o-transform:rotate(-7deg);
+  transform:rotate(-7deg);*/
+  transition: all 1s ease;
+}
+
+.photo-frame:hover {
+  cursor: pointer;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.photo-frame:hover .photo-2 {
+  opacity: 0;
+}
+
+.photo-back {
+  opacity: 0;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  transition: all 1s ease;
+}
+
+.photo-frame:hover .photo-back {
+  opacity: 1;
 }
 
 
