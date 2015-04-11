@@ -11,7 +11,8 @@ var MAIN = (function($) {
       $sections: $view.find('.section'),
       $avatar: $('.avatar'),
       $aboutNum: $view.find('.js-num'),
-      $canvas: document.getElementById('canvas')
+      $canvas: document.getElementById('canvas'),
+      $projectSection: $view.find('.project-section')
     };
   }
 
@@ -19,6 +20,13 @@ var MAIN = (function($) {
     el.$avatar.hover(function() {
       $(this).toggleClass('infinite');
     });
+
+    $('.project-item').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      var $this = $(this);
+      // setTimeout(function() {
+        $this.removeClass('fadeInDown active').addClass('fadeOutUp');
+      // }, 500);
+    })
   }
 
   /** tools **/
@@ -42,6 +50,10 @@ var MAIN = (function($) {
       paddingTop: 50,
       onLeave: function(index, nextIndex) {
         (nextIndex === 1) ? el.$avatar.removeClass('hidden') : el.$avatar.addClass('hidden');
+
+        if (nextIndex === 3) {
+          // initProject();
+        }
       },
       afterLoad: function(anchorLink , index) {
         if (!hasAnimated(index - 1)) {
@@ -62,6 +74,7 @@ var MAIN = (function($) {
         break;
 
       case 3:
+        initProject();
         break;
 
       case 4:
@@ -182,6 +195,14 @@ var MAIN = (function($) {
     });
 
     countNumber($skill, skills[skill], true);
+  }
+
+  /* project section */
+  function initProject() {
+    var count = $('.project-item').length;
+    for (var i = 0; i < count; i++) {
+      $('.project-item').eq(i).addClass('fadeInDown animated active');
+    }
   }
 
   /** interest section */
