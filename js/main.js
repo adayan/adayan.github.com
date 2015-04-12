@@ -54,7 +54,7 @@ var MAIN = (function($) {
 
   function initFullpage() {
     $view.fullpage({
-      sectionsColor: ['#7BAABE', '#F8823C', '#2c5379', '#f90', '#41ABA7'],
+      sectionsColor: ['#7BAABE', '#F8823C', 'lightblue', '#f90', '#00b38a'],
       anchors: anchors,
       menu: '#menu',
       onLeave: function(index, nextIndex) {
