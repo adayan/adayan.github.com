@@ -2,7 +2,7 @@ html {
   font-family: "微软雅黑","Microsoft YaHei","Helvetica",Arial,sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333333;
+  color: #fff;
 }
 
 a,
@@ -16,6 +16,16 @@ a:hover {
 ul {
   margin: 0;
   list-style: none;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: normal;
 }
 
 .hidden {
@@ -88,11 +98,23 @@ ul {
   border-bottom: 5px solid red;
 }
 
+.section {
+  padding-top: 100px;
+}
+
+
 /* about */
 .about-content {
   -webkit-animation-delay: .5s;
   -moz-animation-delay: .5s;
   -o-animation-delay: .5s;
+}
+
+.about-intro {
+  position: absolute;
+  margin-left: -319px;
+  left: 50%;
+  top: 50%;
 }
 
 .intro-item {
@@ -135,6 +157,10 @@ ul {
 }
 
 /* skill */
+.skill-content {
+  font-size: 16px;
+}
+
 .canvas-wrap {
   position: relative;
 }
@@ -150,29 +176,24 @@ ul {
   position: absolute;
 }
 
-/* project */
-/*.project-item.active {
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  -ms-animation-delay: 2s;
-  -o-animation-delay: 2s;
-}*/
-
-.item-1.active {
+.item-1.active,
+.project-desc-1.active {
   -webkit-animation-delay: .5s;
   -moz-animation-delay: .5s;
   -ms-animation-delay: .5s;
   -o-animation-delay: .5s;
 }
 
-.item-2.active {
+.item-2.active,
+.project-desc-2.active {
   -webkit-animation-delay: 4s;
   -moz-animation-delay: 4s;
   -ms-animation-delay: 4s;
   -o-animation-delay: 4s;
 }
 
-.item-3.active {
+.item-3.active,
+.project-desc-3.active {
   -webkit-animation-delay: 7.5s;
   -moz-animation-delay: 7.5s;
   -ms-animation-delay: 7.5s;
@@ -181,12 +202,40 @@ ul {
 
 .item-1,
 .item-2,
-.item-3 {
+.item-3,
+.project-desc {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   -ms-animation-delay: 1s;
   -o-animation-delay: 1s;
 }
+
+.project-wrap {
+  margin: 0 auto;
+  height: 100%;
+  width: 90%;
+}
+
+.project-left,
+.project-right {
+  position: relative;
+  height: 100%;
+  width: 50%;
+}
+
+.project-item,
+.project-desc {
+  position: absolute;
+}
+
+.project-item {
+  right: 50px;
+}
+
+.project-desc {
+  left: 0;
+}
+
 
 /* interest */
 .photo-wrap {
@@ -199,6 +248,7 @@ ul {
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2);
+  color: #333;
   position: absolute;
   min-height: 200px;
   width: 300px;
@@ -207,17 +257,17 @@ ul {
 
 .frame-1 {
   left: 0;
-  top: 100px;
+  top: 50px;
 }
 
 .frame-2 {
   left: 150px;
-  top: 200px;
+  top: 150px;
 }
 
 .frame-3 {
   left: 350px;
-  top: 50px;
+  top: 0;
 }
 
 .photo-1,
@@ -257,8 +307,8 @@ ul {
 
 .photo-brief {
   position: absolute;
-  left: 700px;
-  top: 200px;
+  right: 10%;
+  top: 100px;
 }
 
 .brief-1 {

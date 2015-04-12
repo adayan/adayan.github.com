@@ -19,32 +19,34 @@
   <nav class="nav pull-right">
     <ul id="menu">
       <li data-menuanchor="about" class="nav-item active"><a href="#about">我</a></li>
-      <li data-menuanchor="skill" class="nav-item"><a href="#skill">我</a></li>
-      <li data-menuanchor="project" class="nav-item"><a href="#project">我</a></li>
-      <li data-menuanchor="interest" class="nav-item"><a href="#interest">我</a></li>
+      <li data-menuanchor="skill" class="nav-item"><a href="#skill">会的</a></li>
+      <li data-menuanchor="project" class="nav-item"><a href="#project">写过</a></li>
+      <li data-menuanchor="interest" class="nav-item"><a href="#interest">走过</a></li>
+      <li data-menuanchor="contact" class="nav-item"><a href="#contact">联系我</a></li>
     </ul>
   </nav>
 </header>
 
 <div class="section-wrap">
   <section class="section about text-center">
-    <h2 class="about-title fadeInDown animated hidden">I'm Ada</h2>
+    <h2 class="about-title fadeInDown animated hidden">我是闫少华</h2>
     <p class="about-content fadeInUp animated hidden">
-      just a test for frontend with html5 and css3<br />
-      I'm trying to improve...
+      一个热爱前端, 乐观向上, 喜欢旅行的 IT 女
+    <br />
     </p>
     <div class="about-intro">
-      <a class="intro-item about-experience fadeInRight animated hidden"><span class="js-num block">0</span><span class="subtitle inline-block">experience</span></a>
-      <a class="intro-item about-project fadeInRight animated hidden"><span class="js-num block">0</span><span class="subtitle inline-block">projects</span></a>
-      <a class="intro-item about-responsibility fadeInRight animated hidden"><span class="block"><span class="js-num inline-block">0</span>%</span><span class="subtitle inline-block">responsibility</span></a>
+      <a class="intro-item about-experience fadeInRight animated hidden"><span class="block"><span class="js-num inline-block">0</span>年</span><span class="subtitle inline-block">工作经验</span></a>
+      <a class="intro-item about-project fadeInRight animated hidden"><span class="block"><span class="js-num inline-block">0</span>个</span><span class="subtitle inline-block">项目</span></a>
+      <a class="intro-item about-responsibility fadeInRight animated hidden"><span class="block"><span class="js-num inline-block">0</span>%</span><span class="subtitle inline-block">责任心</span></a>
     </div>
-  </section>
+  </section><!-- /me -->
 
   <section class="section text-center">
-    <h2 class="about-title fadeInDown animated hidden">I'm Ada</h2>
-    <p class="about-conten fadeInUp animated hidden">
-      just a test for frontend with html5 and css3<br />
-      I'm trying to improve...
+    <p class="about-content skill-content fadeInUp animated hidden">
+     PHP出身, 不过是用过Yii框架, 写过几行sql<br />
+     却对前端有着浓厚的兴趣<br />
+     定制过wordpress响应式主题, 玩过nodejs<br />
+     喜欢用Grunt来满足自己的强迫症
     </p>
     <div class="canvas-wrap">
       <canvas id="canvas" height="400"></canvas>
@@ -53,19 +55,28 @@
       <span class="css"></span>
       <span class="php"></span>
     </div>
-  </section>
+  </section><!-- /skill -->
 
-  <section class="section project-section">
-    <div class="project-item item-1 hidden">
-      <img src="imgs/t2.JPG">
+  <section class="section project-section overflow-hidden">
+    <div class="project-wrap clearfix">
+      <div class="project-left pull-left">
+        <div class="project-item item-1 hidden">
+          <img src="imgs/p1.png">
+        </div>
+        <div class="project-item item-2 hidden">
+          <img src="imgs/t1.JPG">
+        </div>
+        <div class="project-item item-3 hidden">
+          <img src="imgs/t3.JPG">
+        </div>
+      </div>
+      <div class="project-right pull-left text-center">
+        <p class="project-desc project-desc-1 hidden">This is a project using wordpress</p>
+        <p class="project-desc project-desc-2 hidden">This is a project using php</p>
+        <p class="project-desc project-desc-3 hidden">This is a project using nodejs</p>
+      </div>
     </div>
-    <div class="project-item item-2 hidden">
-      <img src="imgs/t1.JPG">
-    </div>
-    <div class="project-item item-3 hidden">
-      <img src="imgs/t3.JPG">
-    </div>
-  </section>
+  </section><!-- /project -->
 
   <section class="section">
     <div class="photo-wrap">
@@ -73,8 +84,7 @@
         <div class="photo-1">
           <img width="300" src="imgs/t1.JPG">
           <p>
-          This is Ada's self-portrait. <br>
-          bla bla bla ...
+          ......
           </p>
         </div>
         <div class="photo-back backend-1 text-center">嘿嘿</div>
@@ -84,8 +94,7 @@
         <div class="photo-2">
           <img width="300" src="imgs/t2.JPG">
           <p>
-          This is Ada's self-portrait. <br>
-          bla bla bla ...
+          断桥
           </p>
         </div>
         <div class="photo-back text-center">嘿嘿</div>
@@ -95,8 +104,7 @@
         <div class="photo-3">
           <img width="300" src="imgs/t3.JPG">
           <p>
-          This is Ada's self-portrait. <br>
-          bla bla bla ...
+          九溪
           </p>
         </div>
         <div class="photo-back text-center">嘿嘿</div>
@@ -108,12 +116,26 @@
         <p class="brief-3 fadeInRight animated hidden">所以，我还在路上...</p>
       </div>
     </div>
-  </section>
+  </section><!-- /interest -->
+
+  <section class="section contact-secton">
+  <div class="">
+    <label>我叫: </label>
+    <label>闫少华</label>
+  </div>
+  <div class="">
+    <label>英文名: </label>
+    <label>Ada Yan</label>
+  </div>
+  <div class="">
+    <label></label>
+    <label></label>
+  </div>
+  </section><!-- /contact -->
 </div>
 
 <script src="js/jquery-1.11.2.min.js"></script>
-<!-- <script src="js/jquery.mousewheel.min.js"></script> -->
-<script src="js/jquery.fullPage.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

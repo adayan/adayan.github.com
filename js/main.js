@@ -2,7 +2,7 @@ var MAIN = (function($) {
   'use strict';
 
   var $view, el, aboutSetting,
-      anchors = ['about', 'skill', 'project', 'interest'],
+      anchors = ['about', 'skill', 'project', 'interest', 'contact'],
       $window = $(window);
 
 
@@ -12,21 +12,31 @@ var MAIN = (function($) {
       $avatar: $('.avatar'),
       $aboutNum: $view.find('.js-num'),
       $canvas: document.getElementById('canvas'),
-      $projectSection: $view.find('.project-section')
+      $projectSection: $view.find('.project-section'),
+      $projectItems: $view.find('.project-item'),
+      $projectDesc: $view.find('.project-desc')
     };
   }
 
   function bindActions() {
+    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
     el.$avatar.hover(function() {
       $(this).toggleClass('infinite');
     });
 
-    $('.project-item').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-      var $this = $(this);
-      // setTimeout(function() {
-        $this.removeClass('fadeInDown active').addClass('fadeOutUp');
-      // }, 500);
-    })
+    $('.project-item').one(animationEnd, function() {
+      $(this).removeClass('fadeInDownBig active');
+      if (el.$projectItems.index($(this)) !== 2) {
+        $(this).addClass('fadeOutUpBig');
+      }
+    });
+    $('.project-desc').one(animationEnd, function() {
+      $(this).removeClass('fadeInUpBig active');
+      if (el.$projectDesc.index($(this)) !== 2) {
+        $(this).addClass('fadeOutDownBig');
+      }
+    });
   }
 
   /** tools **/
@@ -44,10 +54,9 @@ var MAIN = (function($) {
 
   function initFullpage() {
     $view.fullpage({
-      sectionsColor: ['#7BAABE', '#F8823C', '#003366', '#f90'],
+      sectionsColor: ['#7BAABE', '#F8823C', '#2c5379', '#f90', '#41ABA7'],
       anchors: anchors,
       menu: '#menu',
-      paddingTop: 50,
       onLeave: function(index, nextIndex) {
         (nextIndex === 1) ? el.$avatar.removeClass('hidden') : el.$avatar.addClass('hidden');
 
@@ -73,12 +82,8 @@ var MAIN = (function($) {
         initSkill();
         break;
 
-      case 3:
+      case 3:  // project section
         initProject();
-        break;
-
-      case 4:
-        initInterest();
         break;
 
       default:
@@ -181,6 +186,7 @@ var MAIN = (function($) {
     // draw text
     ctx.font = 'bold 18px Helvetica';
     ctx.textAlign = 'center';
+    ctx.fillStyle = '#fff';
     ctx.fillText(skill.toUpperCase(), cirleX, 2*cirleY);
     ctx.closePath();
 
@@ -201,14 +207,10 @@ var MAIN = (function($) {
   function initProject() {
     var count = $('.project-item').length;
     for (var i = 0; i < count; i++) {
-      $('.project-item').eq(i).addClass('fadeInDown animated active');
+      $('.project-item').eq(i).addClass('fadeInDownBig animated active');
+      $('.project-desc').eq(i).addClass('fadeInUpBig animated active');
     }
   }
-
-  /** interest section */
-  function initInterest() {
-  }
-
 
   return {
     init: function() {
