@@ -162,7 +162,9 @@ h2 {
 }
 
 .canvas-wrap {
+  margin: 0 auto;
   position: relative;
+  width: 90%;
 }
 
 .javascript,
@@ -176,7 +178,56 @@ h2 {
   position: absolute;
 }
 
-.item-1.active,
+/* project */
+.project-section {
+  padding-top: 47px;
+}
+
+.project-item {
+  background-size: cover;
+  float: left;
+  height: 50%;
+  width: 25%;
+}
+
+/*.project-bg {
+  display: inline-block;
+}*/
+
+.p1 {
+  background: url(../imgs/eio.png) no-repeat center center;
+  /*max-width: 100%;*/
+}
+
+.p2 {
+  background: url(../imgs/kefu.png) no-repeat center center;
+}
+
+.p3 {
+  background: url(../imgs/kefu.png) no-repeat center center;
+}
+
+.p4 {
+  background: url(../imgs/kefu.png) no-repeat center center;
+}
+
+.p5 {
+  background: url(../imgs/kefu.png) no-repeat center center;
+}
+
+.p6 {
+  background: url(../imgs/kefu.png) no-repeat center center;
+}
+
+.p7 {
+  background: url(../imgs/kefu.png) no-repeat center center;
+}
+
+.p8 {
+  background: url(../imgs/kefu.png) no-repeat center center;
+}
+
+/*.item-1.active,
 .project-desc-1.active {
   -webkit-animation-delay: .5s;
   -moz-animation-delay: .5s;
@@ -234,7 +285,7 @@ h2 {
 
 .project-desc {
   left: 0;
-}
+}*/
 
 
 /* interest */

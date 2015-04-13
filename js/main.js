@@ -3,6 +3,7 @@ var MAIN = (function($) {
 
   var $view, el, aboutSetting,
       anchors = ['about', 'skill', 'project', 'interest', 'contact'],
+      cirleColors = ['#FCCE10', '#5AB1EF', '#00B38A', '#E52C3C'],
       $window = $(window);
 
 
@@ -19,24 +20,24 @@ var MAIN = (function($) {
   }
 
   function bindActions() {
-    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    //var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
     el.$avatar.hover(function() {
       $(this).toggleClass('infinite');
     });
 
-    $('.project-item').one(animationEnd, function() {
-      $(this).removeClass('fadeInDownBig active');
-      if (el.$projectItems.index($(this)) !== 2) {
-        $(this).addClass('fadeOutUpBig');
-      }
-    });
-    $('.project-desc').one(animationEnd, function() {
-      $(this).removeClass('fadeInUpBig active');
-      if (el.$projectDesc.index($(this)) !== 2) {
-        $(this).addClass('fadeOutDownBig');
-      }
-    });
+    // $('.project-item').one(animationEnd, function() {
+    //   $(this).removeClass('fadeInDownBig active');
+    //   if (el.$projectItems.index($(this)) !== 2) {
+    //     $(this).addClass('fadeOutUpBig');
+    //   }
+    // });
+    // $('.project-desc').one(animationEnd, function() {
+    //   $(this).removeClass('fadeInUpBig active');
+    //   if (el.$projectDesc.index($(this)) !== 2) {
+    //     $(this).addClass('fadeOutDownBig');
+    //   }
+    // });
   }
 
   /** tools **/
@@ -140,7 +141,7 @@ var MAIN = (function($) {
       },
       radius: isMobile() ? 50 : 100,
       margin: 100,
-      startAngle: 3*Math.PI/2
+      startAngle: 2*Math.PI/3
     };
 
     var canvas = el.$canvas;
@@ -162,7 +163,7 @@ var MAIN = (function($) {
     ctx.beginPath();
     ctx.arc(cirleX, cirleY, options.radius, 0, Math.PI*2, true);
     ctx.lineWidth = 25;
-    ctx.strokeStyle = 'lightblue';
+    ctx.strokeStyle = '#ccc';
     ctx.stroke();
 
     // process cirle
@@ -176,7 +177,7 @@ var MAIN = (function($) {
       ctx.beginPath();
       var anglePerSec = 2 * Math.PI * count / (100 / (options.skills[skill]) * 10);
       ctx.arc(cirleX, cirleY, options.radius, options.startAngle, options.startAngle + anglePerSec, false);
-      ctx.strokeStyle = 'darkblue';
+      ctx.strokeStyle = cirleColors[index];
       ctx.stroke();
       ctx.closePath();
 
@@ -205,11 +206,11 @@ var MAIN = (function($) {
 
   /* project section */
   function initProject() {
-    var count = $('.project-item').length;
-    for (var i = 0; i < count; i++) {
-      $('.project-item').eq(i).addClass('fadeInDownBig animated active');
-      $('.project-desc').eq(i).addClass('fadeInUpBig animated active');
-    }
+    // var count = $('.project-item').length;
+    // for (var i = 0; i < count; i++) {
+    //   $('.project-item').eq(i).addClass('fadeInDownBig animated active');
+    //   $('.project-desc').eq(i).addClass('fadeInUpBig animated active');
+    // }
   }
 
   return {
