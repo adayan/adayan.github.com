@@ -183,48 +183,64 @@ h2 {
   padding-top: 47px;
 }
 
+/*.project-bg {
+  display: inline-block;
+}*/
+
+.p1 {
+  background: url(../imgs/eio.png) no-repeat left center;
+}
+
+.p2 {
+  background: url(../imgs/developer.png) no-repeat center right;
+}
+
+.p3 {
+  background: url(../imgs/ae.png) no-repeat center center;
+}
+
+.p4 {
+  background: url(../imgs/jifen.png) no-repeat center right;
+}
+
+.p5 {
+  background: url(../imgs/kefu.png) no-repeat left center;
+}
+
+.p6 {
+  background: url(../imgs/download.png) no-repeat left center;
+}
+
+.p7 {
+  background: url(../imgs/p1.png) no-repeat center center;
+  background-size: contain !important;
+}
+
+.p8 {
+  background: url(../imgs/lp.png) no-repeat center center;
+}
+
 .project-item {
+  position: relative;
   background-size: cover;
   float: left;
   height: 50%;
   width: 25%;
 }
 
-/*.project-bg {
+.project-mask {
+  background: #000;
+  cursor: pointer;
   display: inline-block;
-}*/
-
-.p1 {
-  background: url(../imgs/eio.png) no-repeat center center;
-  /*max-width: 100%;*/
+  position: absolute;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  transition: all 1s ease;
 }
 
-.p2 {
-  background: url(../imgs/kefu.png) no-repeat center center;
-}
-
-.p3 {
-  background: url(../imgs/kefu.png) no-repeat center center;
-}
-
-.p4 {
-  background: url(../imgs/kefu.png) no-repeat center center;
-}
-
-.p5 {
-  background: url(../imgs/kefu.png) no-repeat center center;
-}
-
-.p6 {
-  background: url(../imgs/kefu.png) no-repeat center center;
-}
-
-.p7 {
-  background: url(../imgs/kefu.png) no-repeat center center;
-}
-
-.p8 {
-  background: url(../imgs/kefu.png) no-repeat center center;
+.project-mask:hover {
+  opacity: 0;
 }
 
 /*.item-1.active,

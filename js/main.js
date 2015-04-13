@@ -55,15 +55,11 @@ var MAIN = (function($) {
 
   function initFullpage() {
     $view.fullpage({
-      sectionsColor: ['#7BAABE', '#F8823C', 'lightblue', '#f90', '#00b38a'],
+      sectionsColor: ['#7BAABE', '#F8823C', '#F8823C', '#f90', '#00b38a'],
       anchors: anchors,
       menu: '#menu',
       onLeave: function(index, nextIndex) {
         (nextIndex === 1) ? el.$avatar.removeClass('hidden') : el.$avatar.addClass('hidden');
-
-        if (nextIndex === 3) {
-          // initProject();
-        }
       },
       afterLoad: function(anchorLink , index) {
         if (!hasAnimated(index - 1)) {
