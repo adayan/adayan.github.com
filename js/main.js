@@ -99,7 +99,7 @@ var MAIN = (function($) {
   }
 
   function initAboutAnimation() {
-    var numbers = [2, 9, 100],
+    var numbers = [2, 10, 100],
         $numbers = el.$aboutNum,
         $number;
 
