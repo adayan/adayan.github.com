@@ -1,5 +1,5 @@
 html {
-  font-family: "微软雅黑","Microsoft YaHei","Helvetica",Arial,sans-serif;
+  font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft YaHei",Arial,sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #fff;
@@ -433,6 +433,7 @@ h2 {
 }
 
 .ps {
+  font-size: 14px;
   position: absolute;
   bottom: 70px;
   width: 100%;
