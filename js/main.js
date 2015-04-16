@@ -80,7 +80,6 @@ var MAIN = (function($) {
         break;
 
       case 3:  // project section
-        initProject();
         break;
 
       default:
@@ -174,6 +173,7 @@ var MAIN = (function($) {
       var anglePerSec = 2 * Math.PI * count / (100 / (options.skills[skill]) * 10);
       ctx.arc(cirleX, cirleY, options.radius, options.startAngle, options.startAngle + anglePerSec, false);
       ctx.strokeStyle = cirleColors[index];
+      ctx.lineCap = "round";
       ctx.stroke();
       ctx.closePath();
 
@@ -198,15 +198,6 @@ var MAIN = (function($) {
     });
 
     countNumber($skill, skills[skill], true);
-  }
-
-  /* project section */
-  function initProject() {
-    // var count = $('.project-item').length;
-    // for (var i = 0; i < count; i++) {
-    //   $('.project-item').eq(i).addClass('fadeInDownBig animated active');
-    //   $('.project-desc').eq(i).addClass('fadeInUpBig animated active');
-    // }
   }
 
   return {

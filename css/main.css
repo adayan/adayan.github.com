@@ -183,10 +183,6 @@ h2 {
   padding-top: 47px;
 }
 
-/*.project-bg {
-  display: inline-block;
-}*/
-
 .p1 {
   background: url(../imgs/eio.png) no-repeat left center;
 }
@@ -242,66 +238,6 @@ h2 {
 .project-mask:hover {
   opacity: 0;
 }
-
-/*.item-1.active,
-.project-desc-1.active {
-  -webkit-animation-delay: .5s;
-  -moz-animation-delay: .5s;
-  -ms-animation-delay: .5s;
-  -o-animation-delay: .5s;
-}
-
-.item-2.active,
-.project-desc-2.active {
-  -webkit-animation-delay: 4s;
-  -moz-animation-delay: 4s;
-  -ms-animation-delay: 4s;
-  -o-animation-delay: 4s;
-}
-
-.item-3.active,
-.project-desc-3.active {
-  -webkit-animation-delay: 7.5s;
-  -moz-animation-delay: 7.5s;
-  -ms-animation-delay: 7.5s;
-  -o-animation-delay: 7.5s;
-}
-
-.item-1,
-.item-2,
-.item-3,
-.project-desc {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  -ms-animation-delay: 1s;
-  -o-animation-delay: 1s;
-}
-
-.project-wrap {
-  margin: 0 auto;
-  height: 100%;
-  width: 90%;
-}
-
-.project-left,
-.project-right {
-  position: relative;
-  height: 100%;
-  width: 50%;
-}
-
-.project-item,
-.project-desc {
-  position: absolute;
-}
-
-.project-item {
-  right: 50px;
-}
-
-.project-desc {
-  left: 0;
-}*/
 
 
 /* interest */
@@ -395,6 +331,187 @@ h2 {
   -moz-animation-delay: 3.5s;
   -o-animation-delay: 3.5s;
 }
+
+/* contact */
+.cloud-animation {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+}
+
+.cloud {
+  cursor: pointer;
+  position: absolute;
+}
+
+.cloud p {
+  margin: 0;
+}
+
+.cloud-1 {
+  bottom: 30px;
+  right: -211px;
+}
+
+.contact-section.active .cloud-1 {
+  -webkit-animation: cloud1animation 6s ease-in .5;
+  animation: cloud1animation 6s ease-in .5;
+}
+
+.cloud-1:hover {
+  bottom: 400px;
+  transition: all ease 2s;
+}
+
+.cloud-2 {
+  bottom: 0;
+  left: -300px;
+}
+
+.cloud-2:hover {
+  bottom: 400px;
+  transition: all ease 2s;
+}
+
+.contact-section.active .cloud-2 {
+  -webkit-animation: cloud2animation 4s ease-in .8;
+  animation: cloud2animation 4s ease-in .8;
+}
+
+.cloud-3 {
+  margin-left: -293px;
+  left: 50%;
+  top: 0;
+}
+
+.contact-section.active .cloud-3 {
+  -webkit-animation: cloud3animation 2s ease-in 1s;
+  animation: cloud3animation 2s ease-in 1s;
+}
+
+.contact-icon {
+  position: absolute;
+}
+
+.cloud-1 .contact-icon,
+.cloud-2 .contact-icon,
+.cloud-3 .contact-icon {
+  bottom: -164px;
+  left: 50%;
+}
+
+.cloud-1 .contact-icon {
+  bottom: -210px;
+}
+
+.cloud-2 .contact-icon {
+  bottom: -224px;
+}
+
+.contact-line {
+  border: 1px dashed #fff;
+  height: 100px;
+  width: 0;
+}
+
+.contact-me {
+  margin-left: -68px;
+}
+
+.contact-skype,
+.contact-email {
+  margin-left: -64px;
+}
+
+.cloud-1 p {
+  margin-left: -96px;
+}
+
+.cloud-2 p {
+  margin-left: -96px;
+}
+
+.ps {
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+}
+
+
+/* animations */
+@-webkit-keyframes cloud1animation {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px)
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes cloud1animation {
+    0% {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes cloud2animation {
+    0% {
+      -webkit-transform: translateY(100px);
+      transform: translateY(100px)
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes cloud2animation {
+    0% {
+      -webkit-transform: translateY(100px);
+      transform: translateY(100px)
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes cloud3animation {
+    0% {
+      -webkit-transform: translateY(1000px);
+      transform: translateY(1000px)
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes cloud3animation {
+    0% {
+      -webkit-transform: translateY(100px);
+      transform: translateY(100px)
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
 
 
 /** clearfix **/
