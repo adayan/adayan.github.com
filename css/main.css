@@ -341,7 +341,6 @@ h2 {
 }
 
 .cloud {
-  cursor: pointer;
   position: absolute;
 }
 
@@ -383,11 +382,12 @@ h2 {
   margin-left: -293px;
   left: 50%;
   top: 0;
+  z-index: 2;
 }
 
 .contact-section.active .cloud-3 {
-  -webkit-animation: cloud3animation 2s ease-in 1s;
-  animation: cloud3animation 2s ease-in 1s;
+  -webkit-animation: cloud3animation 2s ease-in;
+  animation: cloud3animation 2s ease-in;
 }
 
 .contact-icon {
@@ -416,7 +416,17 @@ h2 {
 }
 
 .contact-me {
+  cursor: pointer;
   margin-left: -68px;
+}
+
+.my-phone {
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  z-index: 1;
+  margin-left: -55px;
 }
 
 .contact-skype,
@@ -424,10 +434,7 @@ h2 {
   margin-left: -64px;
 }
 
-.cloud-1 p {
-  margin-left: -96px;
-}
-
+.cloud-1 p,
 .cloud-2 p {
   margin-left: -96px;
 }

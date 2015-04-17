@@ -1,7 +1,7 @@
 var MAIN = (function($) {
   'use strict';
 
-  var $view, el, aboutSetting,
+  var $view, el, aboutSetting, y, // drag cloud y distance
       anchors = ['about', 'skill', 'project', 'interest', 'contact'],
       cirleColors = ['#FCCE10', '#5AB1EF', '#00B38A', '#E52C3C'],
       $window = $(window);
@@ -15,7 +15,9 @@ var MAIN = (function($) {
       $canvas: document.getElementById('canvas'),
       $projectSection: $view.find('.project-section'),
       $projectItems: $view.find('.project-item'),
-      $projectDesc: $view.find('.project-desc')
+      $projectDesc: $view.find('.project-desc'),
+      $dragCloud: document.getElementById('dragCloud'),
+      $myphone: $view.find('.my-phone')
     };
   }
 
@@ -25,6 +27,21 @@ var MAIN = (function($) {
     el.$avatar.hover(function() {
       $(this).toggleClass('infinite');
     });
+
+    el.$dragCloud.ondragstart = function(event) {
+      y = event.y;
+      el.$myphone.show();
+    };
+
+    el.$dragCloud.ondragover = function(event) {
+      event.preventDefault();
+
+      $(this).closest('.cloud').css({'top': event.y - y});
+    };
+
+    el.$dragCloud.ondragend = function(event) {
+      $(this).closest('.cloud').css('top', 0);
+    };
 
     // $('.project-item').one(animationEnd, function() {
     //   $(this).removeClass('fadeInDownBig active');
