@@ -378,6 +378,11 @@ h2 {
   animation: cloud2animation 4s ease-in .8;
 }
 
+.cloud-1,
+.cloud-2 {
+  cursor: pointer;
+}
+
 .cloud-3 {
   margin-left: -293px;
   left: 50%;
