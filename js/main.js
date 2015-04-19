@@ -22,8 +22,6 @@ var MAIN = (function($) {
   }
 
   function bindActions() {
-    //var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-
     el.$avatar.hover(function() {
       $(this).toggleClass('infinite');
     });
@@ -42,19 +40,6 @@ var MAIN = (function($) {
     el.$dragCloud.ondragend = function(event) {
       $(this).closest('.cloud').css('top', 0);
     };
-
-    // $('.project-item').one(animationEnd, function() {
-    //   $(this).removeClass('fadeInDownBig active');
-    //   if (el.$projectItems.index($(this)) !== 2) {
-    //     $(this).addClass('fadeOutUpBig');
-    //   }
-    // });
-    // $('.project-desc').one(animationEnd, function() {
-    //   $(this).removeClass('fadeInUpBig active');
-    //   if (el.$projectDesc.index($(this)) !== 2) {
-    //     $(this).addClass('fadeOutDownBig');
-    //   }
-    // });
   }
 
   /** tools **/
@@ -72,7 +57,7 @@ var MAIN = (function($) {
 
   function initFullpage() {
     $view.fullpage({
-      sectionsColor: ['#7BAABE', '#432f21', '#F8823C', '#f90', '#00b38a'],
+      sectionsColor: ['#7BAABE', '#432f21', '#432f21', '#f90', '#00b38a'],
       anchors: anchors,
       menu: '#menu',
       onLeave: function(index, nextIndex) {
